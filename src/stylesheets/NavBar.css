@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+html
+body{
+    background-color: rgba(176, 220, 221, 0.568);
+}
+
+.nav-bar{
+    background-color: rgba(232, 204, 113, 0.414);
+    box-shadow:5px -10px 20px;
+    border-radius: 5px;
+    margin: 20px;
+    padding: 10px;
+    
+    
+}
+.titulo{
+    text-align: center;
+    text-shadow:rgb(163, 144, 144) 5px 10px 5px;
+    color: rgb(58, 51, 52) ;
+    max-width: 940;
+    font-size: 2.5rem;
+    font-family: 'Gill Sans',  sans-serif;
+    font-weight: 700;
+    line-height: 1.1;
+    margin:  60px 0;
+    padding: 10px
+    
+}
+.brand {
+    background-color:rgb(210, 184, 189) ;
+    box-shadow:5px -10px 20px;
+    margin: 5px;
+    border-radius: 50%;
+    
+}
+
+.button1{
+    font-size: 2rem;
+    font-family: 'Gill Sans',  sans-serif;
+    background-color: rgb(210, 184, 189) ;
+    box-shadow:5px -10px 20px;
+    border-radius: 5px;
+    margin-top: 5px;
+
+}
+ .button1:hover{
+    color: rgb(58, 51, 52) ;
+    background-color: rgba(176, 220, 221, 0.568);
+   
+    
+}
+.carrito{
+    background-color:rgb(210, 184, 189) ;
+    box-shadow:5px -10px 20px;
+    border-radius: 50%;
+    
+}
+.cart-widget{
+padding: 5px;
+}
+.counter{
+    font-size: medium;
+    
+}
+.greeting{
+    font-size: 2rem;
+    font-family: 'Gill Sans',  sans-serif;
+    text-align: center;
+    margin-top: 30px;
+    padding: 10px;
+   
+}
