@@ -7,6 +7,7 @@ import {
   Flex, Box, Spacer
   } from '@chakra-ui/react'
 import CartWidget from './CartWidget'
+import { Link } from 'react-router-dom'
 
 const NavBar = () => {
   return (
@@ -14,7 +15,9 @@ const NavBar = () => {
       <h1 className='titulo'> AMPARO'S ICE-CREAM STORE</h1>
       <Flex>
         <Box p='4'>
-        <img className='brand' src='/src/assets/brand.ico.png' alt='imagen de helado'></img>
+          <Link to={"/"}>
+            <img className='brand' src='/src/assets/brand.ico.png' alt='imagen de helado'></img>
+          </Link>
         </Box>
         <Spacer />
         <Box className='button1' p='4' >
@@ -23,16 +26,32 @@ const NavBar = () => {
                 Nuestros Helados
               </MenuButton>
               <MenuList>
-                <MenuItem>1/4 litro</MenuItem>
-                <MenuItem>1/2 litro</MenuItem>
-                <MenuItem>1 litro</MenuItem>
+                  <MenuItem>
+                  <Link to={`/category/${"Con Azúcar"}`}>
+                      Con Azúcar
+                  </Link>
+                </MenuItem>
+                <MenuItem>
+                  <Link to={`/category/${"Diet"}`}>
+                    Diet
+                  </Link>
+                </MenuItem>
+                <MenuItem>
+                  <Link to={`/category/${"sinGluten"}`}>
+                    Sin Gluten
+                  </Link>
+                </MenuItem>
               </MenuList>
           </Menu>
         </Box>
         <Spacer />
-        <Box className='carrito' p='4'>
-          <CartWidget />
-        </Box>
+        
+          <Box className='carrito' p='4'>
+            <Link to={"/cart"}>
+            <CartWidget />
+            </Link>
+          </Box>
+        
       </Flex>
      
     </div>
