@@ -39,3 +39,13 @@ _Se agrega a continuacion un GIF mostrando la funcionalidad de la pagina web:_
 
 
 
+Se utilizo libreria chakra ui https://chakra-ui.com/ para formatos y deseños
+
+Firebase para crear y mantener la base de datos , https://firebase.google.com/
+
+Icon8 para iconos, https://iconos8.es/
+
+
+
+
+

@@ -1,60 +1,75 @@
-import React from 'react'
-import { Card, Text, CardBody, CardFooter, Heading, CardHeader, Center, Button, Flex, Stack, Image } from '@chakra-ui/react';
-import { useParams } from 'react-router-dom';
+import { useContext, useState } from 'react'
+import { Card, Text, CardBody, CardFooter, Heading, Center, Stack, Image } from '@chakra-ui/react';
 import ItemCount from "./ItemCount";
+import { CartContext } from '../context/ShoppingCartContext';
+import { Link } from 'react-router-dom'
 
 
-const ItemDetail = ({ products }) => {
-    const { id } = useParams()
 
 
-    const filteredProducts = products.filter((product) => product.id == id)
+
+const ItemDetail = ({ product }) => {
+    
+  const [quantity, setQuantity] = useState(0);
+
+  const { addItem } = useContext(CartContext);
+
+   
+  const handleOnAdd = (quantity) => {
+    console.log(`se agregaron ${quantity} ${product.title} al carrito`);	
+    setQuantity(parseInt(quantity));
+    addItem(product)
+  }
+  
+  
+
+
 
     return (
-        <div>
-            {filteredProducts.map((p) => {
-                return (
-                    <div key={p.id}>
-                           <Center p='2rem'> 
-                                <Card display="flex" alignItems="center" justifyContent="space-between"
-                                direction={{ base: 'column', sm: 'row' }}
-                                overflow='hidden'
-                                variant='outline'
-                                >
-                                <Image
-                                    objectFit='cover'
-                                    maxW={{ base: '100%', sm: '200px' }}
-                                    src={p.image}
-                                    alt='Helado artesanal'
-                                />
+        <>
+            <Center p='2rem'> 
+                <Card display="flex" alignItems="center" justifyContent="space-between"
+                direction={{ base: 'column', sm: 'row' }}
+                overflow='hidden'
+                variant='outline'
+                >
+                <Image
+                    objectFit='cover'
+                    maxW={{ base: '100%', sm: '200px' }}
+                    src= {product.image}
+                    alt='Helado artesanal'
+                />
 
-                                <Stack>
-                                    <CardBody>
-                                    <Heading size='md'>{p.title}</Heading>
-                                    <Button variant='solid' colorScheme='pink'>Comprar</Button>
+                <Stack>
+                    <CardBody>
+                    <Heading size='md'>{product.title}</Heading>
+                    
+                    <Text py='2'>
+                        <strong>Ingredientes:</strong> {product.ingredients}
+                    </Text>
+                    <Text>
+                        <strong>Tipo:</strong> {product.category}</Text>
+                    <Text><strong>$</strong>{product.price} <strong>el litro.</strong></Text> 
+                    </CardBody>
+                    <CardFooter>
+                        {
+                            quantity > 0 ? (
 
-                                    <Text py='2'>
-                                        <strong>Ingredientes:</strong> {p.ingredients}
-                                    </Text>
-                                    <Text>
-                                        <strong>Tipo:</strong> {p.category}</Text>
-                                    <Text><strong>$</strong>{p.price} <strong>el litro.</strong></Text> 
-                                    </CardBody>
-                                    <CardFooter>
-                                        <ItemCount />
-                                    </CardFooter>
-                                </Stack>
-                                </Card>
-                            </Center>
-
-
-
-                       
-                    </div>
-                )
-            })}
-        </div>
+                               <Link to= '/cart' className='Option'></Link>
+                            
+                            ): (
+                                <ItemCount initial={1} onAdd={handleOnAdd} />
+                            )
+      
+                        
+                        }
+                    </CardFooter>
+                </Stack>
+                </Card>
+            </Center>
+        </>
     )
 }
+
 
 export default ItemDetail
