@@ -31,14 +31,6 @@ _Se muestra a continuacion codigo empleado para ello:_
 
 Se puede volver a la pagina inicial en cualquier momento presionando el Icono de la tienda ![Icono](src/assets/brand.ico.png)en el NavBar.
 
-
-_Se agrega a continuacion un GIF mostrando la funcionalidad de la pagina web:_
-
-![Gif](src/assets/GIF.gif)
-
-
-
-
 Se utilizo libreria chakra ui https://chakra-ui.com/ para formatos y deseños
 
 Firebase para crear y mantener la base de datos , https://firebase.google.com/
@@ -46,6 +38,7 @@ Firebase para crear y mantener la base de datos , https://firebase.google.com/
 Icon8 para iconos, https://iconos8.es/
 
 
+_Se agrega a continuacion un GIF mostrando la funcionalidad de la pagina web:_
 
-
+![GiF](https://github.com/PereiraAmparo/Icecream-store/assets/129115434/cbfe31f2-0437-44f4-88e2-6e15dd9df527)
 
